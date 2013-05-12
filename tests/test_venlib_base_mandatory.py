@@ -19,6 +19,25 @@ sys.path.append(os.getcwd())
 import pytest
 import uuid
 
+def tobe_str(prop):
+    if not type(prop) == "str":
+        print "-------- Type Error --------"
+    prop = "This ist just a simple and short Text"
+    with pytest.raises(TypeError):
+        prop = 1
+    with pytest.raises(TypeError):
+        prop = 2.2345
+
+def tobe_int(prop):
+    if not type(prop) == "int":
+        print "-------- Type Error --------"
+    with pytest.raises(TypeError):
+        prop = "This ist just a simple and short Text"
+    prop = 1
+    with pytest.raises(TypeError):
+        prop = 2.2345
+
+
 class TestMandatory():
     def test_mdy_Address_isinstance_DataObj(self):
         import venlib
@@ -32,61 +51,29 @@ class TestMandatory():
 
         adr = Address()
         
-        if not type(adr.name) == "str":
-            print "-------- Type Error --------"
-        adr.name = "Schmidt"
-        
-        if not type(adr.first_name) == str:
-            print "-------- Type Error --------"
-        adr.first_name = "Otto"
-        
-        if not type(adr.companyname) == str:
-            print "-------- Type Error --------"
-        adr.companyname = "fastcars ltd"
-        
-        if not type(adr.priv_streat) == str:
-            print "-------- Type Error --------"
-        adr.priv_streat = "Woodway"
-        
-        if not type(adr.priv_house_nr) == str:
-            print "-------- Type Error --------"
-        adr.priv_house_nr = "10 a"
+        tobe_str(adr.name)
+        tobe_str(adr.first_name)
+        tobe_str(adr.companyname)
+        tobe_str(adr.priv_streat)
+        tobe_str(adr.priv_house_nr)
         
         # TODO: This test has to be extendet to countrycode Object
-        if not type(adr.priv_countrycode) == str:
-            print "-------- Type Error --------"
-        adr.priv_countrycode = "40721"
-
-        if not type(adr.bus_streat) == str:
-            print "-------- Type Error --------"
-        adr.bus_streat = "Woodway"
-        
-        if not type(adr.bus_house_nr) == str:
-            print "-------- Type Error --------"
-        adr.bus_house_nr = "10 a"
-        
+        tobe_str(adr.priv_countrycode)
+        tobe_str(adr.priv_country)
+        tobe_str(adr.bus_streat)
+        tobe_str(adr.bus_house_nr)
+       
         # TODO: This test has to be extendet to countrycode Object
-        if not type(adr.bus_countrycode) == str:
-            print "-------- Type Error --------"
-        adr.bus_countrycode = "40721"
+        tobe_str(adr.bus_countrycode)
+        tobe_str(adr.bus_country)
 
         # TODO: This test has to be extendet to countrycode Object
-        if not type(adr.postbox_countrycode) == str:
-            print "-------- Type Error --------"
-        adr.priv_countrycode = "40721"
+        tobe_str(adr.postbox_countrycode)
 
         # TODO: How did postoffice Addresses work world wide
-        if not type(adr.postbox_address) == str:
-            print "-------- Type Error --------"
-        adr.priv_countrycode = "Postoffice ...."
-
-        if not type(adr.weburl) == str:
-            print "-------- Type Error --------"
-        adr.weburl = "http://www.chaosdorf.de"
-        
-        if not type(adr.position) == str:
-            print "-------- Type Error --------"
-        adr.position = "General"
+        tobe_str(adr.postbox_address)
+        tobe_str(adr.weburl)
+        tobe_str(adr.position)
         
         # mdyID is the Mandator ID as an UUID
         # or define a table with Adress and Mandator UUID's
