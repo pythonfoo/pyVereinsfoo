@@ -99,7 +99,7 @@ class TestBase():
             print "-------- Tyoe Error --------"
 
 class TestMandatory():
-    def test_mdy_Address_isinstance_venbase(self):
+    def test_mdy_Address_isinstance_DataObj(self):
         import venlib
         from venlib.base.mandatory.address import Address
 
