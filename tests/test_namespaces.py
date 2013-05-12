@@ -10,6 +10,13 @@ Testdriven Development. The First at all is to define
 what Namespaceing is to use in this Project. So we 
 must test the Framestructure. """
 
+import sys
+import os
+
+# Add the ptdraft folder path to the sys.path list
+#sys.path.append('/home/bison/Dokumente/Projekte/Coding/shared/pythonfoo_github/pyVereinsfoo/')
+sys.path.append(os.getcwd())
+
 import pytest
 
 class TestNamespaces():
