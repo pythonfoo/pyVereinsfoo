@@ -91,8 +91,12 @@ class TestBase():
 
         # TODO: Undo Basket
         undo = dataObj.undoable
-
         
+        # TODO: History of Data Edits
+        history = dataObj.hasHistory
+
+        if not type(dataObj.hasHistory) == bool:
+            print "-------- Tyoe Error --------"
 
 class TestMandatory():
     def test_mdy_Address_isinstance_venbase(self):
