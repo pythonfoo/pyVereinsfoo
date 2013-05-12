@@ -57,13 +57,50 @@ class TestNamespaces():
         "LDAP Interface"
         import venlib.base.ldap
 
+class TestBase():
+    def test_base_DataObj_depency(self):
+        import venlib
+        from venlib.base.dataobjects import DataObj
+        
+        if not isinstance(DataObj, venlib.base.venbase.Venbase):
+            print "-------- Dependency Fail --------"
+
+    def test_base_DataObj_props(self):
+        from venlib.base.dataobjects import DataObj
+        import uuid, datetime
+
+        dataObj = DataObj()
+
+        if not type(dataObj.uid) == uuid.UUID:
+            print "-------- Type Error --------"
+
+        if not type(dataObj.readable) == bool:
+            print "-------- Tyoe Error --------"
+        dataObj.readable = True
+
+        if not type(dataObj.writable) == bool:
+            print "-------- Tyoe Error --------"
+        dataObj.writeable = True
+
+        dataObj.lastedit = datetime.datetime.now()
+        if not type(dataObj.lastedit) == datetime.datatime:
+            print "-------- Tyoe Error --------"
+
+        # TODO: Benutzerverwaltung . dataObj.lastEditor ...
+        lastEditor = dataObj.lastEditor
+
+        # TODO: Undo Basket
+        undo = dataObj.undoable
+
+        
+
 class TestMandatory():
     def test_mdy_Address_isinstance_venbase(self):
         import venlib
         from venlib.base.mandatory.address import Address
 
-        if not isinstance(Address, venlib.base.venbase.Venbase):
-            print "Adresse has to be child of venlib.base.venbase.Venbase"
+        if not isinstance(Address, venlib.base.venbase.DataObj):
+            print "-------- Dependency Fail --------"
 
     def test_mdy_Addresse_hasProps(self):
         from venlib.base.mandatory.address import Address
