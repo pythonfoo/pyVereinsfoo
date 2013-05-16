@@ -7,5 +7,7 @@ to call a test:
 py.test-2.7 test_namespaces.py
 (verbouse mode)
 py.test-2.7 -v test_namespaces.py
-
+im Hauptverzeichnis
+py.test-2.7 -v
+reicht auch
 
