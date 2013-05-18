@@ -29,7 +29,7 @@ class TestBase():
             print "-------- Dependency Fail --------"
 
     def test_base_DataObj_props(self):
-        from venlib.base.dataobjects import DataObj
+        from venlib.base.dataobjects.DataObj import DataObj
         import uuid, datetime
 
         dataObj = DataObj()
