@@ -53,7 +53,7 @@ class DataObj(object):
 
     @lastEditor.setter
     def lastEditor(self, value):
-        print('read-only property!')
+        raise Exception('read-only property!')
 
     @property
     def undoable(self):
@@ -61,7 +61,7 @@ class DataObj(object):
 
     @undoable.setter
     def undoable(self, value):
-        print('read-only property!')
+        raise Exception('read-only property!')
 
     @property
     def hasHistory(self):
@@ -69,5 +69,5 @@ class DataObj(object):
 
     @hasHistory.setter
     def hasHistory(self, value):
-        print('read-only property!')
+        raise Exception('read-only property!')
 
