@@ -38,16 +38,16 @@ class TestBase():
             print "-------- Type Error --------"
 
         if not type(dataObj.readable) == bool:
-            print "-------- Tyoe Error --------"
+            print "-------- Type Error --------"
         dataObj.readable = True
 
         if not type(dataObj.writable) == bool:
-            print "-------- Tyoe Error --------"
+            print "-------- Type Error --------"
         dataObj.writeable = True
 
         dataObj.lastedit = datetime.datetime.now()
-        if not type(dataObj.lastedit) == datetime.datatime:
-            print "-------- Tyoe Error --------"
+        if not type(dataObj.lastedit) == datetime.datetime:
+            print "-------- Type Error --------"
 
         # TODO: Benutzerverwaltung . dataObj.lastEditor ...
         lastEditor = dataObj.lastEditor
@@ -59,4 +59,4 @@ class TestBase():
         history = dataObj.hasHistory
 
         if not type(dataObj.hasHistory) == bool:
-            print "-------- Tyoe Error --------"
+            print "-------- Type Error --------"
