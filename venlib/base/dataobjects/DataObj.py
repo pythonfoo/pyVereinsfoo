@@ -9,6 +9,8 @@ class DataObj(object):
         self._readable = False
         self._writeable = False
         self._lastedit = datetime.datetime.now()
+        self._lastEditor = None
+        self._history = []
 
     def uid(self):
         #if not type(dataObj.uid) == uuid.UUID:
@@ -45,3 +47,28 @@ class DataObj(object):
         #    print "-------- Type Error --------"
         #raise Exception("Exception: READ ONLY PROPERTY")
         print('read-only property!')
+
+    @property
+    def lastEditor(self):
+        return self._lastEditor
+
+    @lastEditor.setter
+    def lastEditor(self, value):
+        print('read-only property!')
+
+    @property
+    def undoable(self):
+        return self.hasHistory
+
+    @undoable.setter
+    def undoable(self, value):
+        print('read-only property!')
+
+    @property
+    def hasHistory(self):
+        return len(self._history)
+
+    @hasHistory.setter
+    def hasHistory(self, value):
+        print('read-only property!')
+
