@@ -45,11 +45,11 @@ class TestBase():
             print "-------- Type Error --------"
         dataObj.writeable = True
 
-        dataObj.lastedit = datetime.datetime.now()
-        if not type(dataObj.lastedit) == datetime.datetime:
+        dataObj.lastEdit = datetime.datetime.now()
+        if not type(dataObj.lastEdit) == datetime.datetime:
             print "-------- Type Error --------"
 
-        # TODO: Benutzerverwaltung . dataObj.lastEditor ...
+        # TODO: user management . dataObj.lastEditor ...
         lastEditor = dataObj.lastEditor
 
         # TODO: Undo Basket

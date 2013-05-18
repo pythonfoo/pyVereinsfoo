@@ -7,7 +7,7 @@ class DataObj(object):
         self._uid = uuid.uuid4()
         self._readable = False
         self._writeable = False
-        self._lastedit = datetime.datetime.now()
+        self._lastEdit = datetime.datetime.now()
         self._lastEditor = None
         self._history = []
 
@@ -36,11 +36,11 @@ class DataObj(object):
             raise Exception("Exception: Type miss match. Only BOOL allowed")
 
     @property
-    def lastedit(self):
-        return self._lastedit
+    def lastEdit(self):
+        return self._lastEdit
 
-    @lastedit.setter
-    def lastedit(self, value):
+    @lastEdit.setter
+    def lastEdit(self, value):
         #dataObj.lastedit = datetime.datetime.now()
         #if not type(dataObj.lastedit) == datetime.datetime:
         #    print "-------- Type Error --------"
