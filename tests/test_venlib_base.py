@@ -21,7 +21,7 @@ import pytest
 
 
 class TestBase():
-    def test_base_DataObj_depency(self):
+    def test_base_DataObj_dependency(self):
         import venlib
         from venlib.base.dataobjects import DataObj
         
