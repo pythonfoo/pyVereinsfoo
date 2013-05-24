@@ -38,7 +38,7 @@ class TestNamespaces():
     
     def test_nsp_mandatory(self):
         "it has to be Mandatory, here also are Adresses etc"
-        import venlib.mandatory
+        import venlib.base.mandatory
     
     def test_nsp_bookkeeping(self):
         "bookkeeping"

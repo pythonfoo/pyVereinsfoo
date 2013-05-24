@@ -20,6 +20,7 @@ import pytest
 import uuid
 
 def tobe_str(prop):
+    "to be or not to be String"
     if not type(prop) == "str":
         print "-------- Type Error --------"
     prop = "This ist just a simple and short Text"
@@ -29,6 +30,7 @@ def tobe_str(prop):
         prop = 2.2345
 
 def tobe_int(prop):
+    "to be or not to be int"
     if not type(prop) == "int":
         print "-------- Type Error --------"
     with pytest.raises(TypeError):
@@ -89,15 +91,8 @@ class TestMandatory():
         from venlib.base.mandatory.address import Phone
         phone = Phone()
         
+        tobe_str(phone.number)
         # TODO: Phone Typologic in an Helper to fill here
-        if not type(phone.number) == str:
-            print "-------- Type Error --------"
-        phone.number = "0171-12345678"
- 
-        if not type(phone.typ) == int:
-            print "-------- Type Error --------"
-        phone.typ = 1
-
         if not type(phone.phoneID) == uuid.uuid:
             print "-------- Type Error --------"
         phoneid = phone.phoneID
@@ -114,13 +109,8 @@ class TestMandatory():
         email = EMail()
         
         # TODO: EMail Typologic in an Helper to fill here
-        if not type(email.email_address) == str:
-            print "-------- Type Error --------"
-        email.email_address = "test@master.de"
- 
-        if not type(email.typ) == int:
-            print "-------- Type Error --------"
-        email.typ = 1
+        tobe_str(email.email_address)
+        tobe_int(email.typ) 
 
         if not type(email.emailID) == uuid.uuid:
             print "-------- Type Error --------"
@@ -137,17 +127,9 @@ class TestMandatory():
         from venlib.base.mandatory.address import Notes
         notes = Notes()
         
-        if not type(notes.shorttxt) == str:
-            print "-------- Type Error --------"
-        notes.shorttxt = "some note shorts"
-
-        if not type(notes.longtxt) == str:
-            print "-------- Type Error --------"
-        notes.longtxt = "some note Long text"
-
-        if not type(notes.typ) == int:
-            print "-------- Type Error --------"
-        notes.typ = 1
+        tobe_str(notes.shorttxt)
+        tobe_str(notes.longtxt)
+        tobe_int(notes.typ)
 
         if not type(notes.noteID) == uuid.uuid:
             print "-------- Type Error --------"
